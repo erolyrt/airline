@@ -1,0 +1,23 @@
+{% extends 'flights/layout.html' %}
+
+{% block title %}
+<title> Flights list </title>
+{% endblock%}
+
+{% block body %}
+<h1> FLIGHTS </h1>
+
+<ul>
+    {% for ucus in flights%}
+    <li> 
+        <a href="{% url 'flights:flight' ucus.id %}">
+           Flight nr. {{ ucus.id }} aus {{ ucus.origin }} nach {{ ucus.destination }}
+    <!-- alternatively ----- Flight {{ flight.id}} {{ flight.origin}} {{ flight.destination }} gibi de 
+    yazabilirdin  -->
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock%}
